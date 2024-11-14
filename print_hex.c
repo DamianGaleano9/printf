@@ -50,7 +50,7 @@ int	print_hex(unsigned int val, int asci)
 	while (tmp_hexa != 0)
 	{
 		if ((tmp_hexa % 16) < 10)
-			hex_str[i] = tmp_hexa % 16 + 48;
+			hex_str[i] = tmp_hexa % 16 + '0';
 		else
 			hex_str[i] = (tmp_hexa % 16 - 10) + asci;
 		tmp_hexa = tmp_hexa / 16;
@@ -88,8 +88,8 @@ int	print_hex(unsigned int val, int asci)
 //     printf("\n");
 
 //     // Caso 5: valor con letras en minúsculas
-//     printf("Hexadecimal de 255 con minúsculas: ");
-//     print_hex(255, 'a');  // Debería imprimir 'ff'
+//     printf("Hexadecimal de 2000 con minúsculas: ");
+//     print_hex(2000, 'a');  // Debería imprimir 'ff'
 //     printf("\n");
 
 //     return 0;
