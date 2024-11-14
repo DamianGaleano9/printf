@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char	*new_string(unsigned int val, int *strlen)
 {
@@ -20,10 +20,15 @@ static char	*new_string(unsigned int val, int *strlen)
 
 	i = 0;
 	tmp = val;
-	while (tmp != 0)
+	if (val == 0)
+		i = 1;
+	else
 	{
-		tmp = tmp / 16;
-		i++;
+		while (tmp != 0)
+		{
+			tmp = tmp / 16;
+			i++;
+		}
 	}
 	str = calloc(i + 1, sizeof(char));
 	*strlen = i - 1;
@@ -45,9 +50,9 @@ int	print_hex(unsigned int val, int asci)
 	while (tmp_hexa != 0)
 	{
 		if ((tmp_hexa % 16) < 10)
-			hex_str[i] = tmp_hexa % 16 + '0';
+			hex_str[i] = tmp_hexa % 16 + 48;
 		else
-			hex_str[i] = (tmp_hexa % 16) + asci;
+			hex_str[i] = (tmp_hexa % 16 - 10) + asci;
 		tmp_hexa = tmp_hexa / 16;
 		i--;
 	}
@@ -61,7 +66,7 @@ int	print_hex(unsigned int val, int asci)
 
 // int main() {
 //     // Casos de prueba:
-    
+
 //     // Caso 1: valor 0
 //     printf("Hexadecimal de 0: ");
 //     print_hex(0, 'a');  // Imprime '0' en minúsculas
