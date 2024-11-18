@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: damian <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:48:54 by damian            #+#    #+#             */
-/*   Updated: 2024/11/15 09:48:54 by damian           ###   ########.fr       */
+/*   Updated: 2024/11/18 18:59:57 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,27 @@ static char	*new_string(unsigned long val, int *strlen)
 int	print_pointer(unsigned long val, int asc)
 {
 	unsigned long		tempointer;
-	char				*printpointer;
+	char				*print_str;
 	int					i;
 	int					*len_str;
 
 	len_str = &i;
 	tempointer = val;
-	print_pointer = new_string(val, len_str);
-	if (!printpointer)
+	print_str = new_string(val, len_str);
+	if (!print_str)
 		return (0);
 	while (tempointer != 0 && i-- >= 0)
 	{
 		if ((tempointer % 16) < 10)
-			print_pointer[i + 1] = (tempointer % 16) + 48;
+			print_str[i + 1] = (tempointer % 16) + 48;
 		else
-			print_pointer[i + 1] = (tempointer % 16) + asc;
+			print_str[i + 1] = (tempointer % 16) + asc;
 		tempointer = tempointer / 16;
 	}
-	i = ft_strlen(print_pointer);
+	i = ft_strlen(print_str);
 	i = i + print_string("0x");
-	ft_putstr_fd(print_pointer, 1);
-	free(print_pointer);
+	ft_putstr_fd(print_str, 1);
+	free(print_str);
 	if (val == 0)
 		i += print_char('0');
 	return (i);
@@ -76,6 +76,8 @@ int	print_pointer(unsigned long val, int asc)
 // 	printf("Test 3: ");
 // 	int len3 = print_pointer(test_val_3, 'a');
 // 	printf(" (Length: %d)\n", len3);
+
+// 	// printf(NULL);
 
 // 	return (0);
 // }
