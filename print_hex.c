@@ -65,7 +65,6 @@ int	print_hex(unsigned int val, int asci)
 }
 
 // int main() {
-//     // Casos de prueba:
 
 //     // Caso 1: valor 0
 //     printf("Hexadecimal de 0: ");

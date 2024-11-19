@@ -37,7 +37,7 @@ static int	check_arg(const char *input, void *arg)
 }
 
 int	ft_printf(const char *input, ...)
-{	
+{
 	va_list			args;
 	unsigned int	i;
 
@@ -61,41 +61,43 @@ int	ft_printf(const char *input, ...)
 	return (i);
 }
 
-int main() {
-    // Prueba con un carácter
-    char c = 'A';
-    ft_printf("Prueba 1: %c\n", c);
+// int main() {
+//     // Prueba con un carácter
+//     char c = 'A';
+//     ft_printf("Prueba 1: %c\n", c);
 
-    // Prueba con una cadena
-    char *str = "Hola, mundo!";
-    ft_printf("Prueba 2: %s\n", str);
+//     // Prueba con una cadena
+//     char *str = "Hola, mundo!";
+//     ft_printf("Prueba 2: %s\n", str);
 
-    // Prueba con un número entero
-    int d = 42;
-    ft_printf("Prueba 3: %d\n", d);
+//     // Prueba con un número entero
+//     int d = 42;
+//     ft_printf("Prueba 3: %d\n", d);
 
-    // Prueba con un número entero negativo
-    int neg = -42;
-    ft_printf("Prueba 4: %d\n", neg);
+//     // Prueba con un número entero negativo
+//     int neg = -42;
+//     ft_printf("Prueba 4: %d\n", neg);
 
-    // Prueba con un número sin signo
-    unsigned int u = 42;
-    ft_printf("Prueba 5: %u\n", u);
+//     // Prueba con un número sin signo
+//     unsigned int u = 42;
+//     ft_printf("Prueba 5: %u\n", u);
 
-    // Prueba con un número en hexadecimal (minúsculas)
-    unsigned int x = 255;
-    ft_printf("Prueba 6: %x\n", x);
+//     // Prueba con un número en hexadecimal (minúsculas)
+//     unsigned int x = 255;
+//     ft_printf("Prueba 6: %x\n", x);
 
-    // Prueba con un número en hexadecimal (mayúsculas)
-    unsigned int X = 255;
-    ft_printf("Prueba 7: %X\n", X);
+//     // Prueba con un número en hexadecimal (mayúsculas)
+//     unsigned int X = 255;
+//     ft_printf("Prueba 7: %X\n", X);
 
-    // Prueba con un puntero
-    int *ptr = &d;
-    ft_printf("Prueba 8: %p\n", ptr);
+//     // Prueba con un puntero
+//     int *ptr = &d;
+//     ft_printf("Prueba 8: %p\n", ptr);
 
-    // Prueba con un porcentaje
-    ft_printf("Prueba 9: %%\n");
+//     // Prueba con un porcentaje
+//     ft_printf("Prueba 9: %%\n");
 
-    return 0;
-}
+// 	ft_printf(NULL);
+
+//     return 0;
+// }
