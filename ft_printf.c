@@ -48,7 +48,7 @@ int	ft_printf(const char *input, ...)
 		if (*input == '%')
 		{
 			input++;
-			if (ft_strchr("cspdiuuxX", *input))
+			if (ft_strchr("cspdiuxX", *input))
 				i += check_arg(input, va_arg(args, void *));
 			else if (*input == '%')
 				i += print_char('%');
