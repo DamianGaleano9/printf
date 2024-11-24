@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_int_.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:15:38 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/14 22:15:38 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/24 15:36:02 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,12 @@ int	print_int(int n)
 		return (11);
 	return (i);
 }
+
+// int main() {
+//     int result;
+
+//     printf("Imprimir 9:\n");
+//     result = print_int(9);  // Imprime 42
+//     printf("\nNúmero de caracteres impresos: %d\n", result);
+// 	    return 0;
+// }

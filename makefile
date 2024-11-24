@@ -6,13 +6,13 @@
 #    By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 21:49:47 by dmazo-ga          #+#    #+#              #
-#    Updated: 2024/11/18 19:04:20 by dmazo-ga         ###   ########.fr        #
+#    Updated: 2024/11/24 16:13:47 by dmazo-ga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 LIBFTNAME = libft.a
-CC = CC
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LIBFTDIR = ./libft
 
@@ -26,15 +26,15 @@ SCRCS = ft_printf.c \
 
 OBJS = $(SCRCS:.c=.o)
 
-all = $(NAME)
+all : $(NAME)
+
+$(NAME): makelibft $(OBJS)
+	@ar -r $(NAME) $(OBJS)
 
 makelibft:
 	@make -C $(LIBFTDIR)
 	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
 
-$(NAME): makelibft $(OBJS)
-	@ar -r $(NAME) $(OBJS)
 
 clean:
 	@rm -f $(OBJS)

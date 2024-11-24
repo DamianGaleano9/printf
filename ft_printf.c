@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:03:05 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/11/18 19:59:34 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/24 15:37:00 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,10 +135,8 @@ int	ft_printf(const char *input, ...)
 //     printf("\n\n");
 //     rlen1 = ft_printf("\033[0;33mTest locura:%c%s%d%i%u%x\n\033[0m", 'B', "-42", -42, -42 ,-42 ,-42);
 //     rlen2 = printf   ("\033[0;32mtest locura:%c%s%d%i%u%x\n\033[0m", 'B', "-42", -42, -42 ,-42 ,-42);
-    
 //     printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
 //     printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
-    
 //     printf("\n\n");
 //     return 0;
 // }
