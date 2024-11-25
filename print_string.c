@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:45:25 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/18 19:04:24 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:15:13 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 int	print_string(char *s)
 {
-	unsigned int	i;
-
-	i = 0;
 	if (!s)
 	{
 		ft_putstr_fd("(null)", 1);
 		return (6);
 	}
-	while (s[i])
-		i++;
+	int len = ft_strlen(s);
 	ft_putstr_fd(s, 1);
-	return (i);
+	return (len);
 }
+// int main(void)
+// {
+// 	int len = ("damian");
+// 	printf("longitud de cadena %d\n", len);
+// 	return(0);
+// }

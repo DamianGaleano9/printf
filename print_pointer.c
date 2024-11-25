@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:48:54 by damian            #+#    #+#             */
-/*   Updated: 2024/11/18 18:59:57 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/25 17:20:46 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*new_string(unsigned long val, int *strlen)
 		i++;
 	}
 	str = calloc(i + 1, sizeof(char));
-	*strlen = i - 1;
+	*strlen = i;
 	return (str);
 }
 
@@ -42,6 +42,7 @@ int	print_pointer(unsigned long val, int asc)
 	print_str = new_string(val, len_str);
 	if (!print_str)
 		return (0);
+	i--;
 	while (tempointer != 0 && i-- >= 0)
 	{
 		if ((tempointer % 16) < 10)

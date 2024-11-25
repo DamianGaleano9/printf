@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:38:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/18 19:04:24 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/25 18:08:42 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static char	*new_string(unsigned int val, int *strlen)
 		}
 	}
 	str = calloc(i + 1, sizeof(char));
-	*strlen = i - 1;
+	if (!str) return (NULL);
+	*strlen = i;
 	return (str);
 }
 
@@ -45,8 +46,8 @@ int	print_hex(unsigned int val, int asci)
 	len_str = &i;
 	tmp_hexa = val;
 	hex_str = new_string(val, len_str);
-	if (!hex_str)
-		return (0);
+	if (!hex_str) return (0);
+	i--;
 	while (tmp_hexa != 0)
 	{
 		if ((tmp_hexa % 16) < 10)
