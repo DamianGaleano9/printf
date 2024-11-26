@@ -6,7 +6,7 @@
 #    By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 21:49:47 by dmazo-ga          #+#    #+#              #
-#    Updated: 2024/11/24 16:13:47 by dmazo-ga         ###   ########.fr        #
+#    Updated: 2024/11/26 18:55:09 by dmazo-ga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 LIBFTNAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-LIBFTDIR = ./libft
+LIBFTDIR = ./libft 
 
 SCRCS = ft_printf.c \
 				print_pointer.c \

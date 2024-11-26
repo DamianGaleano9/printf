@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:38:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/25 18:08:42 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/26 19:38:11 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,20 @@ static char	*new_string(unsigned int val, int *strlen)
 
 	i = 0;
 	tmp = val;
-	if (val == 0)
-		i = 1;
-	else
+	   if (val == 0)
+    {
+        *strlen = 1;
+        str = calloc(2, sizeof(char));
+        if (!str) return NULL;
+        str[0] = '0';
+        str[1] = '\0';
+        return str;
+    }
+
+	while (tmp != 0)
 	{
-		while (tmp != 0)
-		{
-			tmp = tmp / 16;
-			i++;
-		}
+		tmp = tmp / 16;
+		i++;
 	}
 	str = calloc(i + 1, sizeof(char));
 	if (!str) return (NULL);
@@ -43,11 +48,13 @@ int	print_hex(unsigned int val, int asci)
 	int				i;
 	int				*len_str;
 
+	i = 0;
+	len_str = 0;
 	len_str = &i;
 	tmp_hexa = val;
 	hex_str = new_string(val, len_str);
 	if (!hex_str) return (0);
-	i--;
+	i = *len_str - 1;
 	while (tmp_hexa != 0)
 	{
 		if ((tmp_hexa % 16) < 10)
@@ -60,10 +67,31 @@ int	print_hex(unsigned int val, int asci)
 	ft_putstr_fd(hex_str, 1);
 	i = ft_strlen(hex_str);
 	free(hex_str);
-	if (val == 0)
-		i += print_char('0');
-	return (i);
+	 if (val == 0)
+        hex_str[0] = '0';
+
+	return i;
 }
+int main(void)
+{
+	int rlen1;
+	int rlen2;
+	 // Test 6: Hex mayusculas
+    rlen1 = ft_printf("\033[0;33mTest HEX: %X\n\033[0m", 255);
+    rlen2 = printf("\033[0;32mTest HEX: %X\n\033[0m", 255);
+    printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
+    printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
+    printf("\n\n");
+
+	    // Test 4: Hex minusculas
+    rlen1 = ft_printf("\033[0;33mTest hex: %x\n\033[0m", 25555555);
+    rlen2 = printf("\033[0;32mTest hex: %x\n\033[0m", 25555555);
+    printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
+    printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
+    printf("\n\n");
+	return (0);
+}
+
 
 // int main() {
 
@@ -73,7 +101,7 @@ int	print_hex(unsigned int val, int asci)
 //     printf("\n");
 
 //     // Caso 2: valor positivo pequeño
-//     printf("Hexadecimal de 42: ");
+//     printf("Hexadecimal de 42 : ");
 //     print_hex(42, 'a');  // Debería imprimir '2a'
 //     printf("\n");
 
@@ -88,8 +116,8 @@ int	print_hex(unsigned int val, int asci)
 //     printf("\n");
 
 //     // Caso 5: valor con letras en minúsculas
-//     printf("Hexadecimal de 2000 con minúsculas: ");
-//     print_hex(2000, 'a');  // Debería imprimir 'ff'
+//     printf("Hexadecimal de 255 con minúsculas: ");
+//     print_hex(255, 'a');  // Debería imprimir 'ff'
 //     printf("\n");
 
 //     return 0;
