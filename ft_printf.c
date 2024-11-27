@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:03:05 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/11/27 16:23:40 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:31:40 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,91 @@ int main(void)
     int n = 42;
     unsigned int un = -42;
     char c = 'a';
-    char *s = "a";
+    char *s = "Damian";
     char *ptr = "Test";
     int plen1 = 0, plen2 = 0;
     int slen1 = 0, slen2 = 0;
+    int clen1 = 0, clen2 = 0;
+    int dlen1 = 0, dlen2 = 0;
+    int ulen1 = 0, ulen2 = 0;
+    int hlen1 = 0, hlen2 = 0;
+
+
+    int hex1 = 0, hex2 = 0;
     //---------------------------------------------------------------------//
     // Test Pointer:
     plen1 = ft_printf("%p \n\033[0m", s);
     plen2 = printf("%p \n\033[0m", s);
-    printf("\033[0;32mprintf devolvió: %d\n\033[0m", plen2);
-    printf("\033[0;33mft_printf devolvió: %d\n\033[0m", plen1);
+    printf("\033[0;32mprintf pointer: %d\n\033[0m", *ptr);
+    printf("\033[0;33mft_printf pointer: %d\n\033[0m", *ptr);
+    //---------------------------------------------------------------------//
+    
+    //---------------------------------------------------------------------//
+    // Test char:
+    clen1 = ft_printf("%c \n\033[0m", 'A');
+    clen2 = printf("%c \n\033[0m", 'A');
+    printf("\033[0;32mprintf char: %d\n\033[0m", clen2);
+    printf("\033[0;33mft_printf char: %d\n\033[0m", clen1);
+    //---------------------------------------------------------------------//
+    
     //---------------------------------------------------------------------//
 
     
+      // Test String:
+    slen1 = ft_printf("%s \n\033[0m", "Dam");
+    slen2 = printf("%s \n\033[0m", "Dam");
+    printf("\033[0;32mprintf string: %d\n\033[0m", slen1);
+    printf("\033[0;33mft_printf string: %d\n\033[0m", slen2);
+    //---------------------------------------------------------------------//
+
+      // Test Decimal:
+    dlen1 = ft_printf("%d \n\033[0m", 999);
+    dlen2 = printf("%d \n\033[0m", 999);
+    printf("\033[0;32mprintf decimal: %d\n\033[0m", dlen1);
+    printf("\033[0;33mft_printf decimal: %d\n\033[0m", dlen2);
+    //---------------------------------------------------------------------//
+    //---------------------------------------------------------------------//
+
+      // Test Unsigned:
+    ulen1 = ft_printf("%u \n\033[0m", -9);
+    ulen2 = printf("%u \n\033[0m", -9);
+    printf("\033[0;32mprintf unsigned: %d\n\033[0m", ulen1);
+    printf("\033[0;33mft_printf unsigned: %d\n\033[0m", ulen2);
+    //---------------------------------------------------------------------//
+    //---------------------------------------------------------------------//
+
+      // Test Hex May:
+    hlen1 = ft_printf("%X \n\033[0m", 255);
+    hlen2 = printf("%X \n\033[0m", 255);
+    printf("\033[0;32mprintf unsigned: %d\n\033[0m", hlen1);
+    printf("\033[0;33mft_printf unsigned: %d\n\033[0m", hlen2);
+    //---------------------------------------------------------------------//
+     // Test Hex Min:
+    hex1 = ft_printf("%x \n\033[0m", 25555555);
+    hex2 = printf("%x \n\033[0m", 25555555);
+    printf("\033[0;32mprintf hex: %d\n\033[0m", hex2);
+    printf("\033[0;33mft_printf hex: %d\n\033[0m", hex1);
+    //---------------------------------------------------------------------//
+
+    //---------------------------------------------------------------------//
+     // Test print int:
+    hex1 = ft_printf("%i \n\033[0m", 999999);
+    hex2 = printf("%i \n\033[0m", 999999);
+    printf("\033[0;32mprintf int: %d\n\033[0m", hex2);
+    printf("\033[0;33mft_printf int: %d\n\033[0m", hex1);
+    //---------------------------------------------------------------------//
+    //---------------------------------------------------------------------//
+     // Test %:
+    hex1 = ft_printf("%% \n\033[0m");
+    hex2 = printf("%% \n\033[0m");
+    printf("\033[0;32mprintf porcentaje: %d\n\033[0m", hex2);
+    printf("\033[0;33mft_printf porcentaje: %d\n\033[0m", hex1);
+    //---------------------------------------------------------------------//
+
     // len1 = ft_printf("\033[0;32mTest Mix: %c %s %d %i %u %x %X %p %%\n\033[0m", c, s, n, n, un, n, n, s);
     // rlen2 = printf("\033[0;32mTest Mix: %c %s %d %i %u %x %X %p %%\n\033[0m", c, s, n, n, un, n, n, s);
 
-    
+    // Test unsigned
     // printf("\n\n");
     // // Test 2: Char
     // rlen1 = ft_printf("\033[0;33mTest char: %c\n\033[0m", 'A');
