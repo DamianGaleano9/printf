@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:48:54 by damian            #+#    #+#             */
-/*   Updated: 2024/11/26 19:05:18 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:15:29 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ static char	*new_string(unsigned long val, int *strlen)
 	char				*str;
 
 	i = 0;
+
+	if (val == 0)
+	{
+		*strlen = 1;
+		str = calloc(2, sizeof(char));
+		return str;
+	}
 	tmp = val;
 	while (tmp != 0)
 	{
@@ -37,9 +44,13 @@ int	print_pointer(unsigned long val, int asc)
 	int					i;
 	int					*len_str;
 
+	i = 0;
+
 	len_str = &i;
 	tempointer = val;
 	print_str = new_string(val, len_str);
+	if (val == '\0')
+		return(write(1, "(nil)", 6));
 	if (!print_str)
 			return (0); i--;
 	while (tempointer != 0 && i-- >= 0)
@@ -87,7 +98,7 @@ int	print_pointer(unsigned long val, int asc)
 // 	unsigned long num3 = 9999;
 
 
-//     // Prueba 1: Valor hexadecimal común
+//     // Prueba 1: Valor hexadecimal
 //     printf("Test 1: ");
 //     int len1 = print_pointer(test_val_1, 'a');  // 'a' para minúsculas
 //     printf(" (Length: %d)\n", len1);

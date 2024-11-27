@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:38:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/26 19:38:11 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:02:56 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	print_hex(unsigned int val, int asci)
 		tmp_hexa = tmp_hexa / 16;
 		i--;
 	}
+	// printf("result------->%d\n\n", hex_str[i]);
 	ft_putstr_fd(hex_str, 1);
 	i = ft_strlen(hex_str);
 	free(hex_str);
@@ -72,50 +73,50 @@ int	print_hex(unsigned int val, int asci)
 
 	return i;
 }
-int main(void)
-{
-	int rlen1;
-	int rlen2;
-	 // Test 6: Hex mayusculas
-    rlen1 = ft_printf("\033[0;33mTest HEX: %X\n\033[0m", 255);
-    rlen2 = printf("\033[0;32mTest HEX: %X\n\033[0m", 255);
-    printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
-    printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
-    printf("\n\n");
+// int main(void)
+// {
+// 	int rlen1;
+// 	int rlen2;
+// 	 // Test 6: Hex mayusculas
+//     rlen1 = ft_printf("\033[0;33mTest HEX: %X\n\033[0m", 255);
+//     rlen2 = printf("\033[0;32mTest HEX: %X\n\033[0m", 255);
+//     printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
+//     printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
+//     printf("\n\n");
 
-	    // Test 4: Hex minusculas
-    rlen1 = ft_printf("\033[0;33mTest hex: %x\n\033[0m", 25555555);
-    rlen2 = printf("\033[0;32mTest hex: %x\n\033[0m", 25555555);
-    printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
-    printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
-    printf("\n\n");
-	return (0);
-}
+// 	    // Test 4: Hex minusculas
+//     rlen1 = ft_printf("\033[0;33mTest hex: %x\n\033[0m", 25555555);
+//     rlen2 = printf("\033[0;32mTest hex: %x\n\033[0m", 25555555);
+//     printf("\033[0;33mft_printf devolvió: %d\n\033[0m", rlen1);
+//     printf("\033[0;32mprintf devolvió: %d\n\033[0m", rlen2);
+//     printf("\n\n");
+// 	return (0);
+// }
 
 
 // int main() {
 
-//     // Caso 1: valor 0
+//     Caso 1: valor 0
 //     printf("Hexadecimal de 0: ");
 //     print_hex(0, 'a');  // Imprime '0' en minúsculas
 //     printf("\n");
 
-//     // Caso 2: valor positivo pequeño
+//     Caso 2: valor positivo pequeño
 //     printf("Hexadecimal de 42 : ");
 //     print_hex(42, 'a');  // Debería imprimir '2a'
 //     printf("\n");
 
-//     // Caso 3: valor grande
+//     Caso 3: valor grande
 //     printf("Hexadecimal de 255: ");
 //     print_hex(255, 'a');  // Debería imprimir 'ff'
 //     printf("\n");
 
-//     // Caso 4: valor con letras en mayúsculas
+//     Caso 4: valor con letras en mayúsculas
 //     printf("Hexadecimal de 255 con mayúsculas: ");
 //     print_hex(255, 'A');  // Debería imprimir 'FF'
 //     printf("\n");
 
-//     // Caso 5: valor con letras en minúsculas
+//     Caso 5: valor con letras en minúsculas
 //     printf("Hexadecimal de 255 con minúsculas: ");
 //     print_hex(255, 'a');  // Debería imprimir 'ff'
 //     printf("\n");
