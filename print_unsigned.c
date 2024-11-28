@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:48:26 by damian            #+#    #+#             */
-/*   Updated: 2024/11/25 19:54:20 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:28:48 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,25 @@ static void	print_digit(unsigned int num)
 
 int	print_unsigned(unsigned int num)
 {
+	int lng;
 	unsigned int	i;
-
+	lng = 0;
+	
 	if(num == 0)
 	{
 		ft_putchar_fd('0', 1);
 		return(1);
 	}
+	unsigned int	tmp = num;
+	while (tmp > 0)
+	{
+		tmp /= 10;
+		lng++;
+	}
 
 	print_digit(num);
 	i = 1;
-	return (0);
+	return (lng);
 }
 // int	main(void)
 // {	

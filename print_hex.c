@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:38:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/27 16:02:56 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:49:41 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	print_hex(unsigned int val, int asci)
 	int				*len_str;
 
 	i = 0;
-	len_str = 0;
 	len_str = &i;
 	tmp_hexa = val;
 	hex_str = new_string(val, len_str);
@@ -60,17 +59,13 @@ int	print_hex(unsigned int val, int asci)
 		if ((tmp_hexa % 16) < 10)
 			hex_str[i] = tmp_hexa % 16 + '0';
 		else
-			hex_str[i] = (tmp_hexa % 16 - 10) + asci;
+			hex_str[i] = (tmp_hexa % 16 - 10) + (asci == 'a' ? 'a' : 'A');
 		tmp_hexa = tmp_hexa / 16;
 		i--;
 	}
-	// printf("result------->%d\n\n", hex_str[i]);
 	ft_putstr_fd(hex_str, 1);
 	i = ft_strlen(hex_str);
 	free(hex_str);
-	 if (val == 0)
-        hex_str[0] = '0';
-
 	return i;
 }
 // int main(void)
