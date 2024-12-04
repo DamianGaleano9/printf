@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:38:43 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/28 14:49:41 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/11/28 16:24:09 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,24 @@ int	print_hex(unsigned int val, int asci)
 	char			*hex_str;
 	int				i;
 	int				*len_str;
+	char			base_char;
 
 	i = 0;
 	len_str = &i;
 	tmp_hexa = val;
 	hex_str = new_string(val, len_str);
 	if (!hex_str) return (0);
+	if (asci == 'a')
+		base_char = 'a';
+	else 
+		base_char = 'A';
 	i = *len_str - 1;
 	while (tmp_hexa != 0)
 	{
 		if ((tmp_hexa % 16) < 10)
 			hex_str[i] = tmp_hexa % 16 + '0';
 		else
-			hex_str[i] = (tmp_hexa % 16 - 10) + (asci == 'a' ? 'a' : 'A');
+			hex_str[i] = (tmp_hexa % 16 - 10) + base_char;
 		tmp_hexa = tmp_hexa / 16;
 		i--;
 	}
