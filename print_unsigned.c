@@ -21,24 +21,22 @@ static void	print_digit(unsigned int num)
 
 int	print_unsigned(unsigned int num)
 {
-	int lng;
-	unsigned int	i;
+	int				lng;
+	unsigned int	tmp;
+
 	lng = 0;
-	
-	if(num == 0)
+	if (num == 0)
 	{
-		ft_putchar_fd('0', 1);
-		return(1);
+		ft_putchar_fd ('0', 1);
+		return (1);
 	}
-	unsigned int	tmp = num;
+	tmp = num;
 	while (tmp > 0)
 	{
 		tmp /= 10;
 		lng++;
 	}
-
 	print_digit(num);
-	i = 1;
 	return (lng);
 }
 // int	main(void)

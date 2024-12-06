@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int print_poin(unsigned long n)
+int	print_poin(unsigned long n)
 {
 	int	len;
-	
+
 	len = 0;
 	if (n == 0)
 		len += ft_putstr_fd("(nill)", 1);

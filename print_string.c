@@ -14,12 +14,14 @@
 
 int	print_string(char *s)
 {
+	int	len;
+
 	if (!s)
 	{
 		ft_putstr_fd("(null)", 1);
 		return (6);
 	}
-	int len = ft_strlen(s);
+	len = ft_strlen(s);
 	ft_putstr_fd(s, 1);
 	return (len);
 }
