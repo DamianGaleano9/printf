@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hexa.c                                       :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 10:31:43 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/12/04 12:27:39 by dmazo-ga         ###   ########.fr       */
+/*   Created: 2024/11/17 17:48:26 by damian            #+#    #+#             */
+/*   Updated: 2024/11/28 14:28:48 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_hexa(unsigned long n, char const arg)
+int	ft_print_unsigned(unsigned int n)
 {
-	int	len;
+	int		len;
 
 	len = 0;
-	if (n >= 16)
-		len += print_hexa((n / 16), arg);
-	if ((n % 16) <= 9)
-		len += ft_putchar_fd ((n % 16) + '0', 1);
-	else if (arg == 'x' && (n % 16) > 9 && (n % 16) < 16)
-		len += ft_putchar_fd((n % 16) - 10 + 'a', 1);
-	else if (arg == 'X' && (n % 16) > 9 && (n % 16) < 16)
-		len += ft_putchar_fd((n % 16) - 10 + 'A', 1);
+	if (n >= 10)
+	{
+		len += ft_print_unsigned(n / 10);
+		len += ft_print_unsigned(n % 10);
+	}
+	else
+		len += ft_print_char(n + '0');
 	return (len);
 }
+// int	main(void)
+// {	
+// 	unsigned int num = 999;
+// 	print_unsigned(num);
+// 	return(0);
+// }

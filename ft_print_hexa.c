@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_poin.c                                       :+:      :+:    :+:   */
+/*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 10:05:17 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/12/04 12:32:13 by dmazo-ga         ###   ########.fr       */
+/*   Created: 2024/12/04 10:31:43 by dmazo-ga          #+#    #+#             */
+/*   Updated: 2024/12/04 12:27:39 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_poin(unsigned long n)
+int	ft_print_hexa(unsigned long n, char const arg)
 {
 	int	len;
 
 	len = 0;
-	if (n == 0)
-		len += ft_putstr_fd("(nill)", 1);
-	else
-	{
-		len += ft_putstr_fd("0x", 1);
-		len += print_hexa(n, 'x');
-	}
+	if (n >= 16)
+		len += ft_print_hexa((n / 16), arg);
+	if ((n % 16) <= 9)
+		len += ft_print_char ((n % 16) + '0');
+	else if (arg == 'x' && (n % 16) > 9 && (n % 16) < 16)
+		len += ft_print_char ((n % 16) - 10 + 'a');
+	else if (arg == 'X' && (n % 16) > 9 && (n % 16) < 16)
+		len += ft_print_char ((n % 16) - 10 + 'A');
 	return (len);
 }

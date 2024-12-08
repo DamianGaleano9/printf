@@ -1,47 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_unsigned.c                                   :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 17:48:26 by damian            #+#    #+#             */
-/*   Updated: 2024/11/28 14:28:48 by dmazo-ga         ###   ########.fr       */
+/*   Created: 2024/11/12 11:34:47 by damian            #+#    #+#             */
+/*   Updated: 2024/11/26 14:25:37 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	print_digit(unsigned int num)
+int	print_char(char c)
 {
-	if (num > 9)
-		print_digit(num / 10);
-	ft_putchar_fd((num % 10) + '0', 1);
-}
-
-int	print_unsigned(unsigned int num)
-{
-	int				lng;
-	unsigned int	tmp;
-
-	lng = 0;
-	if (num == 0)
-	{
-		ft_putchar_fd ('0', 1);
-		return (1);
-	}
-	tmp = num;
-	while (tmp > 0)
-	{
-		tmp /= 10;
-		lng++;
-	}
-	print_digit(num);
-	return (lng);
+	write (1, &c, 1);
+	return (1);
 }
 // int	main(void)
-// {	
-// 	unsigned int num = 999;
-// 	print_unsigned(num);
+// {
+// 	char d = 'e';
+// 	printf("char is %c\n", d);
 // 	return(0);
 // }

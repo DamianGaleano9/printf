@@ -12,17 +12,19 @@
 
 #include "ft_printf.h"
 
-int	print_string(char *s)
-{
-	int	len;
 
-	if (!s)
+int ft_print_string (char const *c)
+{
+	int		len;
+
+	if (c == NULL)
+		return  (ft_print_string ("(null)"));
+	len = 0;
+	while (*c != '\0')
 	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
+		len += ft_print_char (*c);
+		c++;
 	}
-	len = ft_strlen(s);
-	ft_putstr_fd(s, 1);
 	return (len);
 }
 // int main(void)

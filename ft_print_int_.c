@@ -12,27 +12,22 @@
 
 #include "ft_printf.h"
 
-int	print_int(int n)
+int	ft_print_int(int n)
 {
-	int				nb;
-	unsigned int	i;
+	int		len;
 
-	nb = n;
-	i = 1;
-	if (n < 0 && n != -2147483648)
-	{
-		nb = -n;
-		i++;
-	}
-	while (nb > 9)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	ft_putnbr_fd(n, 1);
+	len = 0;
 	if (n == -2147483648)
-		return (11);
-	return (i);
+		return (ft_print_string("-2147483648"));
+	if (n < 0)
+	{
+		n *= -1;
+		len += ft_print_char('-');
+	}
+	if (n >= 10)
+		len += ft_print_char(n / 10);
+	len += ft_print_char((n % 10) + '0');
+	return (len);
 }
 
 // int main() {

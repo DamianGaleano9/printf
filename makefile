@@ -1,30 +1,19 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/13 21:49:47 by dmazo-ga          #+#    #+#              #
-#    Updated: 2024/11/26 18:55:09 by dmazo-ga         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libftprintf.a
-LIBFTNAME = libft.a
+# LIBFTNAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 LIBFTDIR = ./libft 
 
 SCRCS = ft_printf.c \
-				print_pointer.c \
-				print_unsigned.c \
-				print_string.c \
-				print_int.c \
-				print_char.c \
-				print_hex.c \
+				ft_print_poin.c \
+				ft_print_unsigned.c \
+				ft_print_string.c \
+				ft_print_int.c \
+				ft_print_char.c \
+				ft_print_hexa.c \
 
 OBJS = $(SCRCS:.c=.o)
+
 
 all : $(NAME)
 

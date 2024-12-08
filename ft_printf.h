@@ -14,14 +14,17 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "./libft/libft.h"
+# include <unistd.h>
+# include <stdio.h>
+// # include "./libft/libft.h"
 
 int		ft_printf(const char *input, ...);
-int		print_poin(unsigned long n);
-int		print_unsigned(unsigned int nb);
-int		print_string(char *s);
-int		print_int(int n);
-int		print_char(char c);
-int		print_hexa(unsigned long n, char const arg);
+int		ft_print_poin(unsigned long n);
+int		ft_print_string (char const *c);
+int		ft_print_int(int n);
+int		ft_print_char(char c);
+int		ft_print_unsigned(unsigned int n);
+int		ft_print_hexa(unsigned long n, char const arg);
+
 
 #endif
