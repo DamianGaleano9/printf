@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int_.c                                       :+:      :+:    :+:   */
+/*   ft_print_int_.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:15:38 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/24 15:36:02 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 17:29:12 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	ft_print_int(int n)
 		return (ft_print_string("-2147483648"));
 	if (n < 0)
 	{
-		n *= -1;
 		len += ft_print_char('-');
+		n *= -1;
 	}
 	if (n >= 10)
-		len += ft_print_char(n / 10);
+		len += ft_print_int(n / 10);
 	len += ft_print_char((n % 10) + '0');
 	return (len);
 }
@@ -33,8 +33,11 @@ int	ft_print_int(int n)
 // int main() {
 //     int result;
 
-//     printf("Imprimir 9:\n");
-//     result = print_int(9);  // Imprime 42
+//     printf("Imprimir 42:\n");
+//     result = ft_print_int(42);
 //     printf("\nNúmero de caracteres impresos: %d\n", result);
-// 	    return 0;
+
+//     ft_printf ("Usando printf: %d\n", 42);
+
+//     return 0;
 // }

@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:05:17 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/12/09 15:36:51 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:23:36 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_print_poin(unsigned long n)
 
 	len = 0;
 	if (n == 0)
-		len += ft_print_string("(nill)");
+		len += ft_print_string("(nil)");
 	else
 	{
 		len += ft_print_string("0x");
