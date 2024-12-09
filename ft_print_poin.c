@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_poin.c                                       :+:      :+:    :+:   */
+/*   ft_print_poin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:05:17 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/12/04 12:32:13 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 15:36:51 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_poin(unsigned long n)
+int	ft_print_poin(unsigned long n)
 {
 	int	len;
 

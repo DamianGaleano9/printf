@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:39:29 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/04 12:30:11 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 16:26:40 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdio.h>
-// # include "./libft/libft.h"
 
 int		ft_printf(const char *input, ...);
 int		ft_print_poin(unsigned long n);
