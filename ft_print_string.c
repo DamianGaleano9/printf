@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string.c                                     :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:45:25 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/25 19:15:13 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:46:41 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-int ft_print_string (char const *c)
+int	ft_print_string(char const *c)
 {
-	int		len;
+	int	len;
 
 	if (c == NULL)
-		return  (ft_print_string ("(null)"));
+		return (ft_print_string ("(null)"));
 	len = 0;
 	while (*c != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 10:31:43 by dmazo-ga          #+#    #+#             */
-/*   Updated: 2024/12/09 17:40:07 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:50:39 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 int	ft_print_hexa(unsigned long n, char const arg)
 {
-	int	len;
+	int		len;
 
 	len = 0;
-	// if (n == 0)
-    // {
-    //     len += ft_print_char('0');  // Imprime '0'
-    //     return len;
-    // }
-
 	if (n >= 16)
 		len += ft_print_hexa (n / 16, arg);
 	if ((n % 16) <= 9)
@@ -52,7 +46,6 @@ int	ft_print_hexa(unsigned long n, char const arg)
 //     printf("\n\n");
 // 	return (0);
 // }
-
 
 /* int main() {
 

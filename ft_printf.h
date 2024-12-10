@@ -6,7 +6,7 @@
 /*   By: dmazo-ga <dmazo-ga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 21:39:29 by marvin            #+#    #+#             */
-/*   Updated: 2024/12/09 16:26:40 by dmazo-ga         ###   ########.fr       */
+/*   Updated: 2024/12/09 18:47:14 by dmazo-ga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@
 
 int		ft_printf(const char *input, ...);
 int		ft_print_poin(unsigned long n);
-int		ft_print_string (char const *c);
+int		ft_print_string(char const *c);
 int		ft_print_int(int n);
 int		ft_print_char(char c);
 int		ft_print_unsigned(unsigned int n);
 int		ft_print_hexa(unsigned long n, char const arg);
-
 
 #endif

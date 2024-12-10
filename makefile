@@ -1,8 +1,9 @@
 NAME = libftprintf.a
-# LIBFTNAME = libft.a
+
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
-LIBFTDIR = ./libft 
+FLAGS = -Wall -Wextra -Werror
+REMOVE = rm -f
+LIBRARY = ar rc 
 
 SCRCS = ft_printf.c \
 				ft_print_poin.c \
@@ -12,25 +13,25 @@ SCRCS = ft_printf.c \
 				ft_print_char.c \
 				ft_print_hexa.c \
 
-OBJS = $(SCRCS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
+INCLUDE = ft_printf.h
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME): makelibft $(OBJS)
-	@ar -r $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(INCLUDE)
+	$(LIBRARY) $(NAME) $(OBJS)
 
-makelibft:
-	@make -C $(LIBFTDIR)
-	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-
+$(OBJS): $(SRCS)
+	$(CC) $(FLAGS) -c $(SRCS)
 
 clean:
-	@rm -f $(OBJS)
-	@cd $(LIBFTDIR) && make clean
-	
+	$(REMOVE) $(OBJS)
+
 fclean: clean
-	@rm -f $(NAME)
-	@cd $(LIBFTDIR) && make fclean
-	
+	$(REMOVE) $(NAME)
+
 re: fclean all
+
+debug:
+	$(CC) -g $(FLAGS) $(SRCS)
