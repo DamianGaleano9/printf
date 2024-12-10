@@ -5,7 +5,7 @@ FLAGS = -Wall -Wextra -Werror
 REMOVE = rm -f
 LIBRARY = ar rc 
 
-SCRCS = ft_printf.c \
+SRCS = ft_printf.c \
 				ft_print_poin.c \
 				ft_print_unsigned.c \
 				ft_print_string.c \
